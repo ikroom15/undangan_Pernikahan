@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Undangan Pernikahan Digital" />
+  <title>Undangan Pernikahan — Ikroom & Nisa</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HALAMAN 1 — GATE / INPUT NAMA TAMU
+  ══════════════════════════════════════════════════════════ -->
+  <section id="gate" class="gate-section">
+
+    <!-- Ornamen latar -->
+    <div class="gate-ornament gate-ornament--tl"></div>
+    <div class="gate-ornament gate-ornament--tr"></div>
+    <div class="gate-ornament gate-ornament--bl"></div>
+    <div class="gate-ornament gate-ornament--br"></div>
+    <div class="gate-particles" id="gateParticles"></div>
+
+    <div class="gate-content">
+      <div class="gate-logo">
+        <span class="gate-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+        <div class="gate-divider"></div>
+        <p class="gate-subtitle">Undangan Pernikahan</p>
+        <h1 class="gate-names" id="gateNames">
+          <span class="gate-groom">Ikroom</span>
+          <span class="gate-amp">&amp;</span>
+          <span class="gate-bride">Nisa</span>
+        </h1>
+        <p class="gate-date" id="gateDate">12 Juni 2026</p>
+        <div class="gate-divider"></div>
+      </div>
+
+      <div class="gate-form">
+        <p class="gate-form-label">Kepada Yth.</p>
+        <div class="gate-input-wrapper">
+          <input
+            type="text"
+            id="guestNameInput"
+            class="gate-input"
+            placeholder="Ketik nama Anda di sini..."
+            autocomplete="off"
+            maxlength="80"
+          />
+        </div>
+        <button id="enterBtn" class="gate-btn" type="button">
+          <span class="gate-btn-text">Buka Undangan</span>
+          <span class="gate-btn-icon">✦</span>
+        </button>
+        <div id="validationMsg" class="validation-msg" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       HALAMAN 2 — KONTEN UNDANGAN (tersembunyi dahulu)
+  ══════════════════════════════════════════════════════════ -->
+  <main id="invitation" class="invitation" aria-hidden="true">
+
+    <!-- ── KONTROL MUSIK ──────────────────────────────────── -->
+    <div class="music-ctrl" id="musicCtrl" title="Putar / Jeda Musik">
+      <button class="music-btn" id="musicBtn" aria-label="Putar atau jeda musik">
+        <span class="music-icon" id="musicIcon">♪</span>
+        <span class="music-vinyl" id="musicVinyl"></span>
+      </button>
+    </div>
+    <audio id="bgMusic" loop preload="auto"></audio>
+
+    <!-- ── HERO ───────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content animate-on-scroll">
+        <p class="hero-bismillah" id="heroBismillah"></p>
+        <div class="hero-divider"><span></span><span class="hero-divider-diamond">◆</span><span></span></div>
+        <h2 class="hero-title" id="heroTitle">Undangan Pernikahan</h2>
+        <div class="hero-names">
+          <span class="hero-groom" id="heroGroom"></span>
+          <span class="hero-amp">＆</span>
+          <span class="hero-bride" id="heroBride"></span>
+        </div>
+        <div class="hero-divider"><span></span><span class="hero-divider-diamond">◆</span><span></span></div>
+        <p class="hero-date" id="heroDate"></p>
+      </div>
+    </section>
+
+    <!-- ── PEMBUKAAN ──────────────────────────────────────── -->
+    <section class="section opening animate-on-scroll">
+      <div class="section-inner">
+        <p class="opening-salam" id="openingSalam"></p>
+        <p class="opening-poem" id="openingPoem"></p>
+      </div>
+    </section>
+
+    <!-- ── AYAT AL-QURAN ──────────────────────────────────── -->
+    <section class="section quran animate-on-scroll">
+      <div class="section-inner quran-inner">
+        <div class="quran-ornament-top">❧</div>
+        <p class="quran-arabic" id="quranArabic"></p>
+        <p class="quran-translation" id="quranTranslation"></p>
+        <p class="quran-source" id="quranSource"></p>
+        <div class="quran-ornament-bottom">❧</div>
+      </div>
+    </section>
+
+    <!-- ── FOTO PREWEDDING ────────────────────────────────── -->
+    <section class="section prewed animate-on-scroll">
+      <div class="prewed-frame">
+        <div class="prewed-corner prewed-corner--tl"></div>
+        <div class="prewed-corner prewed-corner--tr"></div>
+        <div class="prewed-corner prewed-corner--bl"></div>
+        <div class="prewed-corner prewed-corner--br"></div>
+        <img id="prewedPhoto" src="" alt="Foto Prewedding" class="prewed-img" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- ── MEMPELAI ───────────────────────────────────────── -->
+    <section class="section couple animate-on-scroll">
+      <div class="section-inner">
+        <h3 class="section-title">Kedua Mempelai</h3>
+        <div class="couple-cards">
+          <!-- Pengantin Pria -->
+          <div class="couple-card animate-on-scroll">
+            <div class="couple-icon">♂</div>
+            <p class="couple-label">Pengantin Pria</p>
+            <h4 class="couple-name" id="groomName"></h4>
+            <p class="couple-parents" id="groomDesc"></p>
+          </div>
+
+          <div class="couple-divider">
+            <span class="couple-divider-text">بِسْمِ اللَّه</span>
+          </div>
+
+          <!-- Pengantin Wanita -->
+          <div class="couple-card animate-on-scroll">
+            <div class="couple-icon">♀</div>
+            <p class="couple-label">Pengantin Wanita</p>
+            <h4 class="couple-name" id="brideName"></h4>
+            <p class="couple-parents" id="brideDesc"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DETAIL ACARA ────────────────────────────────────── -->
+    <section class="section event animate-on-scroll">
+      <div class="section-inner">
+        <h3 class="section-title">Detail Acara</h3>
+
+        <!-- Countdown -->
+        <div class="countdown" id="countdown">
+          <div class="countdown-item"><span class="countdown-num" id="cdDays">00</span><span class="countdown-lbl">Hari</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item"><span class="countdown-num" id="cdHours">00</span><span class="countdown-lbl">Jam</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item"><span class="countdown-num" id="cdMins">00</span><span class="countdown-lbl">Menit</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item"><span class="countdown-num" id="cdSecs">00</span><span class="countdown-lbl">Detik</span></div>
+        </div>
+
+        <div class="event-cards">
+          <div class="event-card animate-on-scroll">
+            <div class="event-icon">📅</div>
+            <p class="event-label">Tanggal</p>
+            <p class="event-value" id="eventDate"></p>
+          </div>
+          <div class="event-card animate-on-scroll">
+            <div class="event-icon">🕐</div>
+            <p class="event-label">Waktu</p>
+            <p class="event-value" id="eventTime"></p>
+          </div>
+          <div class="event-card animate-on-scroll">
+            <div class="event-icon">📍</div>
+            <p class="event-label">Lokasi</p>
+            <p class="event-value" id="eventAddress"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PETA ───────────────────────────────────────────── -->
+    <section class="section maps animate-on-scroll">
+      <div class="section-inner">
+        <h3 class="section-title">Lokasi Acara</h3>
+        <div class="map-wrapper">
+          <iframe
+            id="mapsEmbed"
+            src=""
+            width="100%"
+            height="380"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Acara"
+          ></iframe>
+        </div>
+        <a id="mapsLink" href="#" target="_blank" rel="noopener" class="maps-btn">
+          Buka di Google Maps ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ── HADIAH / QR CODE ───────────────────────────────── -->
+    <section class="section gift animate-on-scroll">
+      <div class="section-inner">
+        <h3 class="section-title">Amplop Digital</h3>
+        <p class="gift-note" id="giftNote"></p>
+        <p class="gift-account" id="giftAccount"></p>
+        <div class="qr-frame">
+          <div class="qr-corner qr-corner--tl"></div>
+          <div class="qr-corner qr-corner--tr"></div>
+          <div class="qr-corner qr-corner--bl"></div>
+          <div class="qr-corner qr-corner--br"></div>
+          <img id="qrCode" src="" alt="QR Code Transfer" class="qr-img" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PENUTUP ────────────────────────────────────────── -->
+    <section class="section closing animate-on-scroll">
+      <div class="section-inner closing-inner">
+        <div class="closing-ornament">✦ ✦ ✦</div>
+        <p class="closing-message" id="closingMessage"></p>
+        <div class="closing-divider"><span></span><span class="closing-diamond">◈</span><span></span></div>
+        <p class="closing-signature" id="closingSignature"></p>
+        <div class="closing-names">
+          <span id="closingGroom"></span>
+          <span class="closing-amp"> &amp; </span>
+          <span id="closingBride"></span>
+        </div>
+        <div class="closing-ornament closing-ornament--bottom">✦ ✦ ✦</div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────────── -->
+    <footer class="footer">
+      <p>Made with <span class="footer-heart">♥</span> for a lifetime of love</p>
+    </footer>
+
+  </main><!-- /invitation -->
+
+</body>
+</html>
