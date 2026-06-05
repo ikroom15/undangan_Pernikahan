@@ -23,7 +23,7 @@ const CONFIG = {
   eventAddress:    "Jl. Mawar No. 44, Desa BunutWetan, Kec. Pakis, Kab. Malang, Jawa Timur",
 
   // Embed URL dari Google Maps (buka maps.google.com → Share → Embed a map → salin src="...")
-  googleMapsEmbed: "https://maps.app.goo.gl/WTbH4PZmKLwHcpmA6",
+  googleMapsEmbed: "https://maps.app.goo.gl/69eEwCHMLvX93X9j6?g_st=aw",
 
   // CONFIG.JS — Bagian Foto, QR, dan Musik yang harus diperbaiki:
 
