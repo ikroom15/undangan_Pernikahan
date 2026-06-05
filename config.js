@@ -11,19 +11,19 @@ const CONFIG = {
   brideName:       "Nisa Ameliyah",
 
   // Nama lengkap beserta orang tua
-  groomFullDesc:   "Putra dari Bpk. Samsul Arifin & Ibu Masruroh",
-  brideFullDesc:   "Putri dari Bpk. Ahmad Fauzi & Ibu Siti Aisyah",
+  groomFullDesc:   "Putra dari Bpk. Makhrudi & Ibu Hariani",
+  brideFullDesc:   "Putri dari Bpk. Jumain & Ibu Bawon",
 
   // ── TANGGAL & WAKTU ACARA ─────────────────────────────────
   eventDate:       "Jumat, 12 Juni 2026",
-  eventTime:       "08.00 WIB – selesai",
+  eventTime:       "17.00 WIB – selesai",
   eventDateISO:    "2026-06-12",   // untuk countdown
 
   // ── LOKASI ────────────────────────────────────────────────
-  eventAddress:    "Jl. Melati No. 45, Desa Sukamaju, Kec. Bahagia, Kab. Sejahtera, Jawa Timur",
+  eventAddress:    "Jl. Mawar No. 44, Desa BunutWetan, Kec. Pakis, Kab. Malang, Jawa Timur",
 
   // Embed URL dari Google Maps (buka maps.google.com → Share → Embed a map → salin src="...")
-  googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.123456789!2d112.7320!3d-7.2575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTUnMjcuMCJTIDExMsKwNDMnNTUuMiJF!5e0!3m2!1sid!2sid!4v1234567890",
+  googleMapsEmbed: "https://maps.app.goo.gl/WTbH4PZmKLwHcpmA6",
 
   // CONFIG.JS — Bagian Foto, QR, dan Musik yang harus diperbaiki:
 
